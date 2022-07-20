@@ -1,0 +1,43 @@
+@font-face {
+	font-family: 'noze';
+	src: url('fonts/noze.eot?30161850');
+	src: url('fonts/noze.eot?30161850#iefix') format('embedded-opentype'),
+	 	url('fonts/noze.woff2?30161850') format('woff2'),
+		url('fonts/noze.woff?30161850') format('woff'),
+	 	url('fonts/noze.ttf?30161850') format('truetype'),
+	 	url('fonts/noze.svg?30161850#noze') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	speak: none;
+	line-height: 1;
+	font-family: 'noze';
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+ 
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	speak: none;
+	line-height: 1;
+	font-family: 'noze';
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-info:before { content: '\e800'; }
+.icon-instagram:before { content: '\e801'; }
+.icon-twitter:before { content: '\e802'; }
+.icon-plus:before { content: '\e803'; }
+.icon-facebook:before { content: '\e804'; }
+.icon-arrow-down:before { content: '\e805'; }
+.icon-plus-open:before { content: '\e806'; }

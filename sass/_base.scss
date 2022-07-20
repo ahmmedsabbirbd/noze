@@ -1,0 +1,29 @@
+*:not(ul):not(ol) {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, div, span, img, a, p, h1, h2, h3, 
+h4, h5, h6, option, legend, label, 
+table, th, td, tr, article, aside, 
+caption, figure, footer, header, hgroup, 
+mark, nav, section, time, audio, video {
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	// overflow-y: scroll; 
+}

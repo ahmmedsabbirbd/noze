@@ -1,0 +1,398 @@
+/***********************************
+MEDIA QUERIES
+***********************************/ 
+@media only screen and (max-width: 1460px) {
+    h1, .h1 { font-size: 48px; line-height: 48px; } 
+    h2, .h2 { font-size: 42px;  line-height: 42px; }
+
+    .btn {
+        font-size: 14px;
+        padding: 11.5px 17px;
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .about-gallery {
+        padding: 180px 0;
+    }
+
+    .about-covid {
+        padding: 200px 0;
+    }
+
+    .what-matters__content {
+        height: 55vh;
+    }
+
+    .matters-section .matters__item .title {
+        font-size: 42px;
+        padding: 0 62px; 
+        line-height: 42px; 
+    }
+
+}/* 1460 */
+
+@media only screen and (max-width: 1366px) {
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+        padding: 50px 4.5%;
+
+        &__content {
+            margin: 50px 0 0;
+
+            .title, p {
+                margin: 0 0 30px;
+            }
+        }
+    }
+
+    .about-gallery {
+        padding: 140px 0;
+
+        &__content {
+            margin: 0 0 70px;
+
+            .title {
+                margin-bottom: 25px;
+            }
+        }
+
+        &__slide {  
+            margin-top: 40px;
+            padding-left: 30px;
+        }
+    }
+
+    .about-covid {
+        padding: 150px 0;
+
+        &__content .title {
+            margin-bottom: 30px;
+        }
+    }
+
+    .what-matters__content {
+
+        .title {
+            margin-bottom: 30px;
+        }
+    }
+
+    .matters-section .matters__item {
+        min-height: calc(520px + 2px);
+
+        .title {
+            font-size: 40px;
+            line-height: 40px;
+        }
+    }
+
+    .wondering {
+        padding: 300px 0 170px;
+    }
+
+    .faq-section {
+        padding: 120px 4.5%;
+    }
+
+    .stay-connected__content {
+        min-height: calc(100vh - 110px);
+    }
+
+    .hero-area .your-noze .power__item-wrapper .power__item-media {
+        height: 371px;
+    }
+
+}/* 1366 */
+
+@media only screen and (max-width: 1199px) {
+
+    h1, .h1 { font-size: 34px; line-height: 34px; } 
+    h2, .h2 { font-size: 30px;  line-height: 30px; }
+    h3, .h3 { font-size: 28px;  line-height: 28px; }
+    h4, .h4 { font-size: 24px;  line-height: 26px; }
+
+    .btn {
+        font-size: 12px;
+        padding: 8.5px 15px;
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+        padding: 45px 4.5%;
+
+        &__content {
+            margin: 40px 0 0;
+
+            .title, p {
+                margin: 0 0 25px;
+            }
+        }
+    }
+
+    .noze-making {
+        padding: 60px 61px;
+
+        &__content {
+            max-width: 430px;
+        }
+    }
+
+    .about-gallery {
+        padding: 110px 0;
+
+        &__content {
+            margin: 0 0 50px;
+
+            .title {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__slide {  
+            margin-top: 30px;
+            padding-left: 25px;
+        }
+    }
+
+    .about-covid {
+        padding: 110px 0;
+
+        &__content .title {
+            margin-bottom: 20px;
+        }
+    }
+
+    .what-matters__content {
+
+        .title {
+            margin-bottom: 25px;
+        }
+    }
+
+    .matters-section .matters__item {
+        min-height: calc(436px + 2px);
+
+        &-wrapper {
+            width: 810px;
+            height: 436px;
+        }
+
+        .title {
+            font-size: 28px;
+            margin: 0 auto 0;
+            max-width: 660px;
+            line-height: 35px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 32px; 
+        }
+    }
+
+    .wondering {
+        padding: 250px 0 100px;
+
+        &__media {
+            width: 461px;
+            height: 461px;
+        }
+    }
+
+    .faq-section {
+        padding: 100px 4.5%;
+    }
+
+    .stay-connected__content {
+        min-height: calc(100vh - 130px);
+    }
+
+    .hero-area .your-noze .power__item-wrapper .power__item-media {
+        height: 308px;
+    }
+
+}/* 1199 */
+
+@media only screen and (max-width: 991px) {
+
+    h1, .h1 { font-size: 50px; line-height: 50px; } 
+    h2, .h2 { font-size: 42px;  line-height: 42px; }
+    h3, .h3 { font-size: 36px;  line-height: 40px; }
+    h4, .h4 { font-size: 32px;  line-height: 35px; } 
+
+    .btn {
+        font-size: 15px;
+    }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {
+
+        .navbar .navbar-collapse {
+
+            .navbar-nav {
+                margin: 0;
+
+                li {
+                    margin: 0 !important;
+                }
+
+                &:not(.navbar-right) {
+                    top: 19px;
+                    right: 20px; 
+                    max-height: 28px;
+                    position: absolute;
+                    overflow-y: hidden;
+                    padding: 0 25px 0 0;
+                    flex-direction: column;
+                    border: 1px solid #654a9b;
+                    @include transition(0.3s);
+                    @include border-radius(15px);
+
+                    &:after {
+                        top: -2px;
+                        right: 10px;
+                        display: block;
+                        font-size: 11px;
+                        color: #B9B0E4;
+                        content: "\e805";
+                        font-family: "noze";
+                        position: absolute;
+                        @include transition(0.3s);
+                    }
+
+                    &.active {
+                        background: #fff;
+                        max-height: 200px;
+
+                        &:after {
+                            @include transform(rotate(180deg));
+                        }
+                        
+                        li {
+                            pointer-events: inherit;
+                        }
+                    }
+
+                    li {
+                        width: 111px;
+                        display: flex;
+                        font-size: 15px;
+                        position: relative;
+                        padding-left: 10px;
+                        align-items: center;
+                        pointer-events: none;
+                        margin: 2px 0 5.7px !important;
+                    }
+                }
+
+                &.navbar-right {
+                    left: 0;
+                    bottom: 0;
+                    margin: 0;
+                    height: 70px;
+                    width: 100vw;
+                    position: fixed;
+                    padding: 0 20px;
+                    background: $white;
+                    justify-content: space-between;
+                    box-shadow: 0px 15px 80px rgb(0 0 0 / 3%), 0px 6.26664px 33.4221px rgb(0 0 0 / 2%), 0px 3.35045px 17.869px rgb(0 0 0 / 2%), 0px 1.87823px 10.0172px rgb(0 0 0 / 2%), 0px 0.997515px 5.32008px rgb(0 0 0 / 1%), 0px 0.415088px 2.21381px rgb(0 0 0 / 1%);
+                    
+                    #pre-order {
+                        margin: -20px 0 0 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .hero-area {
+
+        .your-noze {
+            flex-direction: column;
+
+            &__title {
+                width: 100%;
+                padding-right: 0;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .power__item {
+                width: 100% !important;
+                margin-bottom: 75px !important;
+
+                &-wrapper {
+                    width: 100%;
+                    height: inherit;
+                }
+
+                &-media {
+                    margin: 0 auto 0;
+                    height: auto !important;
+                    max-width: 374px !important;
+                }
+
+                &-text {
+                    max-width: 100% !important;
+                }
+            }
+        }
+    }
+
+    .matters-section {
+        height: inherit;
+    }
+
+    .about-gallery__slide {
+        border: 0 !important;
+
+        &:before {
+            content: none;
+        }
+
+        p {
+            display: block;
+        }
+
+        &-media {
+            max-width: 100%;
+            min-width: inherit;
+
+            &-wrapper {
+                max-width: 100%;
+            }
+        }
+    }
+
+}/* 991 */
+
+@media only screen and (max-width: 600px) {
+
+    h1, .h1 { font-size: 45px; line-height: 42px; }
+ 
+}/* 600 */
+
+@media only screen and (max-width: 413px) {
+
+    h1, .h1 { font-size: 35px; line-height: 42px; } 
+    h2, .h2 { font-size: 30px;  line-height: 30px; }
+    h3, .h3 { font-size: 28px;  line-height: 28px; }
+    h4, .h4 { font-size: 24px;  line-height: 26px; }
+
+    .btn {
+        font-size: 13px;
+    }
+ 
+}/* 413 */

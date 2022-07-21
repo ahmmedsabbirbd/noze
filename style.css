@@ -1782,6 +1782,9 @@ MEDIA QUERIES
   .about-gallery__slide-media img {
     width: 100%;
   }
+  .about-gallery__slide-media video {
+    max-width: 100%;
+  }
   .about-gallery__slide-media-wrapper {
     height: 442px;
     max-width: 100%;

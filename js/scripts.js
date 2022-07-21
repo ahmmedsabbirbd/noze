@@ -74,6 +74,46 @@
     /*** tooltip */
     $('[data-toggle="tooltip"]').tooltip();
 
+    /*** fadeInUp.js */
+    const customanimation = $('.custom-animation');
+    if(customanimation.length > 0){
+        window.addEventListener('scroll',animOnScroll);
+
+        function animOnScroll(params){
+            for ( let i=0 ; i<customanimation.length; i++ ){
+                const animation = customanimation[i];
+                const animationHeight = animation.offsetHeight;
+                const animationOffset = offset(animation).top;
+                const animStart = 4;
+
+                let animationPoint = window.innerHeight - animationHeight/animStart;
+
+                if (animationHeight > window.innerHeight){
+                    animationPoint = window.innerHeight - window.innerHeight/animStart
+                }
+
+                if ( (pageYOffset > animationOffset - animationPoint) && pageYOffset < (animationOffset+animationHeight) ){
+                    animation.classList.add('animation_active');
+                } else {
+                    if( !animation.classList.contains('animation-no-hide') ){
+                        animation.classList.remove('animation_active');
+                    }       
+                }  
+            }
+        }
+
+        function offset( el ){
+            const rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
+        }
+
+        setTimeout(() => {
+            animOnScroll();
+        }, 300);
+    }
+
     if ($(window).width() <= 991) {
         
         /*** matterslider */
@@ -222,7 +262,7 @@
     /*** heroVideo */
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) { 
-        $(".heroVideo video").attr("src","images/noze_portrait.mp4");
+        $(".heroVideo video").attr("src","images/noze-portrait.mp4");
         $(".heroVideo div").css("height","77vh");
         var isRunningAnimation = true;
         var scrollGallery = setInterval(function(){
@@ -270,6 +310,86 @@
             }
         }
     });
+
+    /*** matters.js */
+    var marttWrapperTop = $(".matters-section").offset().top;
+    var imgWrapper = $(".matters__item-wrapper");
+    var wrapperOffsetHeight = $(".matters-section").outerHeight() -  $(".matters-section-wrapper").outerHeight();
+    var imgItem = $(".matters__item").outerHeight();
+    var oneScroll = imgItem;
+
+    if ($(window).width() >= 992) {
+        $(window).scroll(function () {
+            $(".matters-nav li.active").removeAttr("class");
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= marttWrapperTop) {
+                $(imgWrapper).animate({ scrollTop: scroll - marttWrapperTop }, 0);
+            }
+
+            if (scroll <= marttWrapperTop + oneScroll) {
+                $(imgWrapper).scrollTop(0);
+                $(".matters-nav li:nth-child(1)").addClass("active");
+            } else if (
+                scroll >= marttWrapperTop &&
+                scroll <= marttWrapperTop + oneScroll * 2
+            ) {
+                $(imgWrapper).scrollTop(imgItem);
+                $(".matters-nav li:nth-child(2)").addClass("active");
+            } else if (
+                scroll >= marttWrapperTop + oneScroll &&
+                scroll <= marttWrapperTop + oneScroll * 3
+            ) {
+                $(imgWrapper).scrollTop(imgItem * 2);
+                $(".matters-nav li:nth-child(3)").addClass("active");
+            } else if (
+                scroll >= marttWrapperTop + oneScroll * 2 &&
+                scroll <= marttWrapperTop + oneScroll * 4
+            ) {
+                $(imgWrapper).scrollTop(imgItem * 3);
+                $(".matters-nav li:nth-child(4)").addClass("active");
+            } else if (
+                scroll >= marttWrapperTop + oneScroll * 3 &&
+                scroll <= marttWrapperTop + oneScroll * 5
+            ) {
+                $(imgWrapper).scrollTop(imgItem * 4);
+                $(".matters-nav li:nth-child(5)").addClass("active");
+            } else if (
+                scroll >= marttWrapperTop + oneScroll * 4 &&
+                scroll <= marttWrapperTop + oneScroll * 6
+            ) {
+                $(imgWrapper).scrollTop(imgItem * 5);
+                $(".matters-nav li:nth-child(6)").addClass("active");
+            } else if (
+                scroll >= marttWrapperTop + oneScroll * 5 &&
+                scroll <= marttWrapperTop + oneScroll * 7
+            ) {
+                $(imgWrapper).scrollTop(imgItem * 6);
+                $(".matters-nav li:nth-child(7)").addClass("active");
+            } else if (
+                scroll >= marttWrapperTop + oneScroll * 6 &&
+                scroll <= marttWrapperTop + oneScroll * 8
+            ) {
+                $(imgWrapper).scrollTop(imgItem * 7);
+                $(".matters-nav li:nth-child(8)").addClass("active");
+            } else if (
+                scroll >= marttWrapperTop + oneScroll * 7 &&
+                scroll <= marttWrapperTop + oneScroll * 9
+            ) {
+                $(imgWrapper).scrollTop(imgItem * 8);
+                $(".matters-nav li:nth-child(9)").addClass("active");
+            } else if (scroll >= marttWrapperTop + oneScroll * 8) {
+                $(imgWrapper).scrollTop(imgItem * 9);
+                $(".matters-nav li:nth-child(10)").addClass("active");
+            }
+        });
+    }
+    function onClickMattersLinks(val) {
+        $("html,body").animate(
+            { scrollTop: marttWrapperTop + oneScroll * val + 1 },
+            "fast"
+        );
+    }
 
     /*** BrowserDetect */
     var BrowserDetect = {
@@ -582,125 +702,4 @@
             });
         });
     }
-})(); 
-
-/*** fadeInUp.js */
-const customanimation = document.querySelectorAll('.custom-animation');
-
-if(customanimation.length > 0){
-    window.addEventListener('scroll',animOnScroll);
-
-    function animOnScroll(params){
-        for ( let i=0 ; i<customanimation.length; i++ ){
-            const animation = customanimation[i];
-            const animationHeight = animation.offsetHeight;
-            const animationOffset = offset(animation).top;
-            const animStart = 4;
-
-            let animationPoint = window.innerHeight - animationHeight/animStart;
-
-            if (animationHeight > window.innerHeight){
-                animationPoint = window.innerHeight - window.innerHeight/animStart
-            }
-
-            if ( (pageYOffset > animationOffset - animationPoint) && pageYOffset < (animationOffset+animationHeight) ){
-                animation.classList.add('animation_active');
-            } else {
-                if( !animation.classList.contains('animation-no-hide') ){
-                    animation.classList.remove('animation_active');
-                }       
-            }  
-        }
-    }
-
-    function offset( el ){
-        const rect = el.getBoundingClientRect(),
-        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
-    }
-
-    setTimeout(() => {
-        animOnScroll();
-    }, 300);
-}
-
-/*** matters.js */
-var marttWrapperTop = $(".matters-section").offset().top;
-var imgWrapper = $(".matters__item-wrapper");
-var wrapperOffsetHeight = $(".matters-section").outerHeight() -  $(".matters-section-wrapper").outerHeight();
-var imgItem = $(".matters__item").outerHeight();
-var oneScroll = imgItem;
-
-if ($(window).width() >= 992) {
-    $(window).scroll(function () {
-        $(".matters-nav li.active").removeAttr("class");
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= marttWrapperTop) {
-            $(imgWrapper).animate({ scrollTop: scroll - marttWrapperTop }, 0);
-        }
-
-        if (scroll <= marttWrapperTop + oneScroll) {
-            $(imgWrapper).scrollTop(0);
-            $(".matters-nav li:nth-child(1)").addClass("active");
-        } else if (
-            scroll >= marttWrapperTop &&
-            scroll <= marttWrapperTop + oneScroll * 2
-        ) {
-            $(imgWrapper).scrollTop(imgItem);
-            $(".matters-nav li:nth-child(2)").addClass("active");
-        } else if (
-            scroll >= marttWrapperTop + oneScroll &&
-            scroll <= marttWrapperTop + oneScroll * 3
-        ) {
-            $(imgWrapper).scrollTop(imgItem * 2);
-            $(".matters-nav li:nth-child(3)").addClass("active");
-        } else if (
-            scroll >= marttWrapperTop + oneScroll * 2 &&
-            scroll <= marttWrapperTop + oneScroll * 4
-        ) {
-            $(imgWrapper).scrollTop(imgItem * 3);
-            $(".matters-nav li:nth-child(4)").addClass("active");
-        } else if (
-            scroll >= marttWrapperTop + oneScroll * 3 &&
-            scroll <= marttWrapperTop + oneScroll * 5
-        ) {
-            $(imgWrapper).scrollTop(imgItem * 4);
-            $(".matters-nav li:nth-child(5)").addClass("active");
-        } else if (
-            scroll >= marttWrapperTop + oneScroll * 4 &&
-            scroll <= marttWrapperTop + oneScroll * 6
-        ) {
-            $(imgWrapper).scrollTop(imgItem * 5);
-            $(".matters-nav li:nth-child(6)").addClass("active");
-        } else if (
-            scroll >= marttWrapperTop + oneScroll * 5 &&
-            scroll <= marttWrapperTop + oneScroll * 7
-        ) {
-            $(imgWrapper).scrollTop(imgItem * 6);
-            $(".matters-nav li:nth-child(7)").addClass("active");
-        } else if (
-            scroll >= marttWrapperTop + oneScroll * 6 &&
-            scroll <= marttWrapperTop + oneScroll * 8
-        ) {
-            $(imgWrapper).scrollTop(imgItem * 7);
-            $(".matters-nav li:nth-child(8)").addClass("active");
-        } else if (
-            scroll >= marttWrapperTop + oneScroll * 7 &&
-            scroll <= marttWrapperTop + oneScroll * 9
-        ) {
-            $(imgWrapper).scrollTop(imgItem * 8);
-            $(".matters-nav li:nth-child(9)").addClass("active");
-        } else if (scroll >= marttWrapperTop + oneScroll * 8) {
-            $(imgWrapper).scrollTop(imgItem * 9);
-            $(".matters-nav li:nth-child(10)").addClass("active");
-        }
-    });
-}
-function onClickMattersLinks(val) {
-    $("html,body").animate(
-        { scrollTop: marttWrapperTop + oneScroll * val + 1 },
-        "fast"
-    );
-}
+})();

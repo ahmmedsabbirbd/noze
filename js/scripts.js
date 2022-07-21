@@ -222,7 +222,7 @@
     /*** heroVideo */
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) { 
-        $(".heroVideo video").attr("src","images/noze_portrait2.mp4");
+        $(".heroVideo video").attr("src","images/noze_portrait.mp4");
         $(".heroVideo div").css("height","77vh");
         var isRunningAnimation = true;
         var scrollGallery = setInterval(function(){

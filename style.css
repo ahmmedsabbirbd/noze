@@ -707,9 +707,11 @@ HOME STYLES
 .about-gallery__slide.active p {
   display: block;
 }
+.about-gallery__slide .title {
+  margin-bottom: 20px;
+}
 .about-gallery__slide p {
   display: none;
-  margin-top: 20px;
 }
 .about-gallery__slide p a i {
   color: #654A9B;
@@ -729,6 +731,13 @@ HOME STYLES
 .about-gallery__slide-media video, .about-gallery__slide-media img {
   border: none;
   height: 100%;
+}
+.about-gallery__slide-media img {
+  border-radius: 500px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
 }
 .about-gallery__slide-media-wrapper {
   -webkit-box-ordinal-group: 4;
@@ -768,6 +777,40 @@ HOME STYLES
   font-style: italic;
   line-height: 24px;
   letter-spacing: 0.1px;
+}
+
+.slick-dots {
+  margin: -4px;
+  bottom: 226px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.slick-dots.matter-dots {
+  bottom: -10px;
+}
+.slick-dots li {
+  width: 7px;
+  height: 7px;
+  margin: 4px;
+  min-width: 7px;
+  background-color: rgba(91, 1, 174, 0.23);
+  border-radius: 500px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.slick-dots li.slick-active {
+  background-color: #210545;
 }
 
 .about-covid {
@@ -973,9 +1016,12 @@ HOME STYLES
   top: 40vh;
   position: sticky;
 }
+.hero-area .matters__content .title {
+  margin-bottom: 45px;
+}
 .hero-area .matters__content p {
+  margin: auto;
   max-width: 550px;
-  margin: 45px auto 0;
 }
 .hero-area .heroVideo {
   position: sticky !important;
@@ -1564,8 +1610,8 @@ MEDIA QUERIES
 /* 1199 */
 @media only screen and (max-width: 991px) {
   h1, .h1 {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 45px;
+    line-height: 45px;
   }
 
   h2, .h2 {
@@ -1590,6 +1636,9 @@ MEDIA QUERIES
   /***********************************
   HEADER STYLES
   ***********************************/
+  .header .navbar {
+    min-height: 60px;
+  }
   .header .navbar .navbar-collapse .navbar-nav {
     margin: 0;
   }
@@ -1675,6 +1724,123 @@ MEDIA QUERIES
   /***********************************
   HOME STYLES
   ***********************************/
+  .banner {
+    padding: 40px 0;
+  }
+  .banner__content {
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+  .banner__content .title, .banner__content p {
+    margin: 0 0 20px;
+  }
+  .banner__media {
+    margin: 0 auto 0;
+    max-width: 280px;
+  }
+
+  .noze-making {
+    padding: 60px 0;
+  }
+  .noze-making__content {
+    margin: auto;
+    text-align: center;
+  }
+
+  .about-gallery {
+    padding: 80px 0;
+  }
+  .about-gallery__content {
+    max-width: 506px;
+    text-align: center;
+    margin: 0 auto 35px;
+  }
+  .about-gallery__content .title {
+    margin-bottom: 15px;
+  }
+  .about-gallery__slide {
+    margin-top: 0;
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 0 !important;
+  }
+  .about-gallery__slide:before {
+    content: none;
+  }
+  .about-gallery__slide p {
+    display: block;
+  }
+  .about-gallery__slide .title {
+    margin-bottom: 12px;
+  }
+  .about-gallery__slide-media {
+    max-width: 100%;
+    min-width: inherit;
+    text-align: center;
+  }
+  .about-gallery__slide-media img {
+    width: 100%;
+  }
+  .about-gallery__slide-media-wrapper {
+    height: 442px;
+    max-width: 100%;
+  }
+  .about-gallery .nasa-bottom-text {
+    display: none;
+  }
+
+  .about-covid {
+    padding: 80px 0;
+  }
+  .about-covid__content {
+    text-align: center;
+  }
+  .about-covid__content .title {
+    text-align: center;
+  }
+  .about-covid__media {
+    height: 380px;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .what-matters {
+    padding: 0;
+  }
+  .what-matters__content .title {
+    margin-bottom: 15px;
+  }
+
+  .matters-section {
+    height: inherit;
+  }
+  .matters-section-wrapper {
+    min-height: 80vh;
+  }
+  .matters-section .matters__item-wrapper {
+    height: 380px;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .matters-section .matters__item .title {
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .matters-section .matters-nav li {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 18px !important;
+    line-height: 32px !important;
+  }
+  .matters-section .matters-nav li.slick-active {
+    color: #2c0a59;
+    font-weight: 600;
+  }
+
+  .hero-area .matters__content .title {
+    margin-bottom: 25px;
+  }
   .hero-area .your-noze {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1704,36 +1870,321 @@ MEDIA QUERIES
     max-width: 100% !important;
   }
 
-  .matters-section {
-    height: inherit;
+  .wondering {
+    padding: 150px 0 80px;
+  }
+  .wondering__media {
+    margin: 0 auto 20px;
+  }
+  .wondering__content {
+    margin: auto;
+    max-width: 650px;
+    text-align: center;
+  }
+  .wondering__content .title, .wondering__content span {
+    margin-bottom: 15px;
+  }
+  .wondering__content-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
-  .about-gallery__slide {
-    border: 0 !important;
+  .faq-section {
+    padding: 60px 0;
   }
-  .about-gallery__slide:before {
-    content: none;
+  .faq-section h2.title {
+    margin-bottom: 30px;
   }
-  .about-gallery__slide p {
-    display: block;
+
+  #faqs .card .card-header {
+    padding: 13px 25px;
+    padding-right: 63px !important;
   }
-  .about-gallery__slide-media {
-    max-width: 100%;
-    min-width: inherit;
+  #faqs .card .card-header:before {
+    right: 20px;
   }
-  .about-gallery__slide-media-wrapper {
-    max-width: 100%;
+  #faqs .card .card-header .title {
+    font-size: 17px;
+    line-height: 30px;
+  }
+  #faqs .card .content-editor {
+    margin-top: 0;
+    font-size: 15px;
+    line-height: 28px;
+    padding: 0px 21px 15px;
+  }
+  #faqs .card .content-editor h1, #faqs .card .content-editor .h1, #faqs .card .content-editor h2, #faqs .card .content-editor .h2, #faqs .card .content-editor h3, #faqs .card .content-editor .h3, #faqs .card .content-editor h4, #faqs .card .content-editor .h4, #faqs .card .content-editor h5, #faqs .card .content-editor .h5, #faqs .card .content-editor h6, #faqs .card .content-editor .h6 {
+    margin-bottom: 10px;
+  }
+  #faqs .card .content-editor p {
+    margin: 0 0 20px;
+  }
+  #faqs .card .content-editor .btn {
+    margin-bottom: 15px;
+  }
+  #faqs .card .content-editor ul li {
+    padding-left: 10px;
+  }
+  #faqs .card .content-editor ul li ul {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  #faqs .card .content-editor ol li ol {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  #faqs .card .content-editor ol li ol li {
+    padding-left: 30px;
+  }
+  #faqs .card .content-editor ol li ol li ol li {
+    padding-left: 45px;
+  }
+  #faqs .card .content-editor ul, #faqs .card .content-editor ol {
+    margin-bottom: 25px;
+  }
+  #faqs .card .content-editor ul li, #faqs .card .content-editor ol li {
+    margin-bottom: 8px;
+  }
+
+  .stay-connected__content {
+    min-height: calc(100vh - 290px);
+  }
+  .stay-connected__content .title {
+    margin-bottom: 10px;
+  }
+  .stay-connected__content .btn {
+    margin-top: 25px;
+  }
+
+  /***********************************
+  FOOTER STYLES
+  ***********************************/
+  .footer {
+    padding: 26px 0;
+  }
+  .footer__widget-wrapper {
+    margin-bottom: 70px;
   }
 }
 /* 991 */
-@media only screen and (max-width: 600px) {
-  h1, .h1 {
-    font-size: 45px;
-    line-height: 42px;
+@media only screen and (max-width: 767px) {
+  /***********************************
+  HOME STYLES
+  ***********************************/
+  .banner__content {
+    max-width: 510px;
+  }
+  .banner__content .title, .banner__content p {
+    margin: 0 0 15px;
+  }
+  .banner__media {
+    max-width: 230px;
+  }
+
+  .noze-making {
+    padding: 50px 0;
+  }
+
+  .about-gallery {
+    padding: 60px 0;
+  }
+  .about-gallery__content {
+    margin: 0 auto 30px;
+  }
+  .about-gallery__content .title {
+    margin-bottom: 10px;
+  }
+  .about-gallery__slide .title {
+    margin-bottom: 10px;
+  }
+  .about-gallery__slide-media-wrapper {
+    height: 280px;
+  }
+
+  .about-covid__content .title {
+    margin-bottom: 15px;
+  }
+  .about-covid__media {
+    height: 340px;
+  }
+
+  .what-matters__content .title {
+    margin-bottom: 12px;
+  }
+
+  .matters-section .matters__item {
+    min-height: calc(318px + 2px);
+  }
+  .matters-section .matters__item-wrapper {
+    height: 318px;
+  }
+  .matters-section .matters__item .title {
+    font-size: 20px;
+    line-height: 21px;
+  }
+  .matters-section .matters__item p {
+    padding: 0 10%;
+  }
+  .matters-section .matters-nav li {
+    font-size: 16px !important;
+    line-height: 30px !important;
+  }
+
+  .hero-area .matters__content .title {
+    margin-bottom: 20px;
+  }
+  .hero-area .your-noze .power__item {
+    margin-bottom: 60px !important;
+  }
+
+  .wondering {
+    padding: 80px 0;
+  }
+
+  .faq-section {
+    padding: 50px 0;
+  }
+  .faq-section h2.title {
+    margin-bottom: 20px;
+  }
+
+  #faqs .card {
+    border-radius: 22px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  #faqs .card .card-header {
+    padding: 10px 20px;
+    padding-right: 50px !important;
+  }
+  #faqs .card .card-header:before {
+    right: 15px;
+  }
+  #faqs .card .card-header .title {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  #faqs .card .content-editor {
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 26px;
+    padding: 0px 20px 10px;
+  }
+
+  .stay-connected__content {
+    min-height: calc(100vh - 350px);
+  }
+  .stay-connected__content .btn {
+    margin-top: 20px;
   }
 }
-/* 600 */
-@media only screen and (max-width: 413px) {
+/* 767 */
+@media only screen and (max-width: 575px) {
+  /***********************************
+  HEADER STYLES
+  ***********************************/
+  .header .navbar .navbar-collapse .navbar-nav:not(.navbar-right) {
+    padding: 0 20px 0 0;
+  }
+  .header .navbar .navbar-collapse .navbar-nav:not(.navbar-right) li {
+    width: 90px;
+    margin: 4px 0 4px !important;
+  }
+  .header .navbar .navbar-collapse .navbar-nav:not(.navbar-right) li > a {
+    font-size: 13px;
+    line-height: 17px;
+  }
+
+  /***********************************
+  HOME STYLES
+  ***********************************/
+  .banner__content .title, .banner__content p {
+    margin: 0 0 10px;
+  }
+  .banner__media {
+    max-width: 180px;
+  }
+
+  .noze-making {
+    padding: 40px 0;
+  }
+
+  .about-gallery {
+    padding: 40px 0;
+  }
+  .about-gallery__content {
+    margin: 0 auto 25px;
+  }
+  .about-gallery__slide-media-wrapper {
+    height: 250px;
+  }
+
+  .slick-dots {
+    bottom: 245px;
+  }
+
+  .about-covid__content .title {
+    margin-bottom: 10px;
+  }
+  .about-covid__media {
+    height: 310px;
+  }
+
+  .what-matters__content {
+    margin-bottom: 20px;
+  }
+  .what-matters__content .title {
+    margin-bottom: 10px;
+  }
+
+  .matters-section .matters__item .title {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .matters-section .matters__item p {
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .matters-section .matters-nav li {
+    font-size: 13px !important;
+    line-height: 20px !important;
+  }
+
+  .hero-area .matters__content .title {
+    margin-bottom: 15px;
+  }
+  .hero-area .your-noze .power__item {
+    margin-bottom: 40px !important;
+  }
+
+  .wondering {
+    padding: 60px 0;
+  }
+  .wondering__media {
+    width: 315px;
+    height: 315px;
+  }
+
+  .faq-section {
+    padding: 40px 0;
+  }
+
+  .stay-connected__content .btn {
+    margin-top: 15px;
+  }
+}
+/* 575 */
+@media only screen and (max-width: 480px) {
   h1, .h1 {
     font-size: 35px;
     line-height: 42px;
@@ -1757,5 +2208,53 @@ MEDIA QUERIES
   .btn {
     font-size: 13px;
   }
+
+  /***********************************
+  HOME STYLES
+  ***********************************/
+  .banner__media {
+    max-width: 180px;
+  }
+
+  .about-gallery {
+    padding: 40px 0;
+  }
+  .about-gallery__slide-media-wrapper {
+    height: 200px;
+  }
+
+  .slick-dots {
+    bottom: 245px;
+  }
+
+  .about-covid {
+    padding: 50px 0;
+  }
+  .about-covid__media {
+    height: 280px;
+  }
+
+  .matters-section .matters__item .title {
+    padding: 0 30px;
+  }
+  .matters-section .matters-nav li {
+    font-size: 11px !important;
+    line-height: 15px !important;
+  }
+
+  .hero-area .matters__content .title {
+    margin-bottom: 10px;
+  }
+  .hero-area .your-noze .power__item {
+    margin-bottom: 30px !important;
+  }
+
+  .wondering {
+    padding: 40px 0;
+  }
+  .wondering__media {
+    width: 260px;
+    height: 260px;
+  }
 }
-/* 413 */
+/* 480 */

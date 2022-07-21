@@ -222,7 +222,7 @@ MEDIA QUERIES
 
 @media only screen and (max-width: 991px) {
 
-    h1, .h1 { font-size: 50px; line-height: 50px; } 
+    h1, .h1 { font-size: 45px; line-height: 45px; } 
     h2, .h2 { font-size: 42px;  line-height: 42px; }
     h3, .h3 { font-size: 36px;  line-height: 40px; }
     h4, .h4 { font-size: 32px;  line-height: 35px; } 
@@ -236,78 +236,82 @@ MEDIA QUERIES
     ***********************************/
     .header {
 
-        .navbar .navbar-collapse {
+        .navbar {
+            min-height: 60px;
 
-            .navbar-nav {
-                margin: 0;
+            .navbar-collapse {
 
-                li {
-                    margin: 0 !important;
-                }
-
-                &:not(.navbar-right) {
-                    top: 19px;
-                    right: 20px; 
-                    max-height: 28px;
-                    position: absolute;
-                    overflow-y: hidden;
-                    padding: 0 25px 0 0;
-                    flex-direction: column;
-                    border: 1px solid #654a9b;
-                    @include transition(0.3s);
-                    @include border-radius(15px);
-
-                    &:after {
-                        top: -2px;
-                        right: 10px;
-                        display: block;
-                        font-size: 11px;
-                        color: #B9B0E4;
-                        content: "\e805";
-                        font-family: "noze";
-                        position: absolute;
-                        @include transition(0.3s);
-                    }
-
-                    &.active {
-                        background: #fff;
-                        max-height: 200px;
-
-                        &:after {
-                            @include transform(rotate(180deg));
-                        }
-                        
-                        li {
-                            pointer-events: inherit;
-                        }
-                    }
+                .navbar-nav {
+                    margin: 0;
 
                     li {
-                        width: 111px;
-                        display: flex;
-                        font-size: 15px;
-                        position: relative;
-                        padding-left: 10px;
-                        align-items: center;
-                        pointer-events: none;
-                        margin: 2px 0 5.7px !important;
+                        margin: 0 !important;
                     }
-                }
 
-                &.navbar-right {
-                    left: 0;
-                    bottom: 0;
-                    margin: 0;
-                    height: 70px;
-                    width: 100vw;
-                    position: fixed;
-                    padding: 0 20px;
-                    background: $white;
-                    justify-content: space-between;
-                    box-shadow: 0px 15px 80px rgb(0 0 0 / 3%), 0px 6.26664px 33.4221px rgb(0 0 0 / 2%), 0px 3.35045px 17.869px rgb(0 0 0 / 2%), 0px 1.87823px 10.0172px rgb(0 0 0 / 2%), 0px 0.997515px 5.32008px rgb(0 0 0 / 1%), 0px 0.415088px 2.21381px rgb(0 0 0 / 1%);
-                    
-                    #pre-order {
-                        margin: -20px 0 0 !important;
+                    &:not(.navbar-right) {
+                        top: 19px;
+                        right: 20px; 
+                        max-height: 28px;
+                        position: absolute;
+                        overflow-y: hidden;
+                        padding: 0 25px 0 0;
+                        flex-direction: column;
+                        border: 1px solid #654a9b;
+                        @include transition(0.3s);
+                        @include border-radius(15px);
+
+                        &:after {
+                            top: -2px;
+                            right: 10px;
+                            display: block;
+                            font-size: 11px;
+                            color: #B9B0E4;
+                            content: "\e805";
+                            font-family: "noze";
+                            position: absolute;
+                            @include transition(0.3s);
+                        }
+
+                        &.active {
+                            background: #fff;
+                            max-height: 200px;
+
+                            &:after {
+                                @include transform(rotate(180deg));
+                            }
+                            
+                            li {
+                                pointer-events: inherit;
+                            }
+                        }
+
+                        li {
+                            width: 111px;
+                            display: flex;
+                            font-size: 15px;
+                            position: relative;
+                            padding-left: 10px;
+                            align-items: center;
+                            pointer-events: none;
+                            margin: 2px 0 5.7px !important;
+                        }
+                    }
+
+                    &.navbar-right {
+                        left: 0;
+                        bottom: 0;
+                        margin: 0;
+                        height: 70px;
+                        width: 100vw;
+                        position: fixed;
+                        padding: 0 20px;
+                        background: $white;
+                        justify-content: space-between;
+                        box-shadow: 0px 15px 80px rgb(0 0 0 / 3%), 0px 6.26664px 33.4221px rgb(0 0 0 / 2%), 0px 3.35045px 17.869px rgb(0 0 0 / 2%), 0px 1.87823px 10.0172px rgb(0 0 0 / 2%), 0px 0.997515px 5.32008px rgb(0 0 0 / 1%), 0px 0.415088px 2.21381px rgb(0 0 0 / 1%);
+                        
+                        #pre-order {
+                            margin: -20px 0 0 !important;
+                        }
                     }
                 }
             }
@@ -317,7 +321,154 @@ MEDIA QUERIES
     /***********************************
     HOME STYLES
     ***********************************/
+    .banner {
+        padding: 40px 0;
+
+        &__content {
+            margin: 0 auto 30px;
+            text-align: center;
+
+            .title, p {
+                margin: 0 0 20px;
+            }
+        }
+
+        &__media {
+            margin: 0 auto 0;
+            max-width: 280px;
+        }
+    }
+
+    .noze-making {
+        padding: 60px 0;
+
+        &__content {
+            margin: auto;
+            text-align: center;
+        }
+    }
+
+    .about-gallery {
+        padding: 80px 0;
+
+        &__content {
+            max-width: 506px;
+            text-align: center;
+            margin: 0 auto 35px;
+
+             .title { 
+                margin-bottom: 15px;
+            }
+        }
+
+        &__slide {
+            margin-top: 0;
+            padding-left: 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 0 !important;
+
+            &:before {
+                content: none;
+            }
+
+            p {
+                display: block;
+            }
+
+            .title {
+                margin-bottom: 12px;
+            }
+
+            &-media {
+                max-width: 100%;
+                min-width: inherit;
+                text-align: center;
+
+                img {
+                    width: 100%;
+                }
+
+                &-wrapper {
+                    height: 442px;
+                    max-width: 100%;
+                }
+            }
+        }
+
+         .nasa-bottom-text {
+            display: none;
+        }
+    }
+
+    .about-covid {
+        padding: 80px 0;
+
+        &__content {
+            text-align: center;
+
+            .title {
+                text-align: center;
+            }
+        }
+
+        &__media {
+            height: 380px;
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    .what-matters {
+        padding: 0;
+
+        &__content .title {
+            margin-bottom: 15px;
+        }
+    }
+
+    .matters-section {
+        height: inherit;
+
+        &-wrapper {
+            min-height: 80vh;
+        }
+
+        .matters__item {
+            
+            &-wrapper {
+                height: 380px;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .title {
+                font-size: 22px;
+                line-height: 27px;
+            }
+        }
+
+        .matters-nav li {
+            margin-bottom: 0;
+            text-align: center; 
+            font-size: 18px !important;
+            line-height: 32px !important;
+
+            &.slick-active {
+                color: #2c0a59;
+                font-weight: 600;
+            }
+        }
+    }
+
     .hero-area {
+
+        .matters__content {
+
+            .title {
+                margin-bottom: 25px;
+            }
+        }
 
         .your-noze {
             flex-direction: column;
@@ -351,40 +502,451 @@ MEDIA QUERIES
         }
     }
 
-    .matters-section {
-        height: inherit;
+    .wondering {
+        padding: 150px 0 80px;
+
+        &__media {
+            margin: 0 auto 20px;
+        }
+
+        &__content {
+            margin: auto;
+            max-width: 650px;
+            text-align: center;
+
+            .title, span {
+                margin-bottom: 15px;
+            }
+
+            &-list {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
     }
 
-    .about-gallery__slide {
-        border: 0 !important;
+    .faq-section {
+        padding: 60px 0;
 
-        &:before {
-            content: none;
+        h2.title {
+            margin-bottom: 30px;
         }
+    }
 
-        p {
-            display: block;
-        }
+    #faqs .card {
 
-        &-media {
-            max-width: 100%;
-            min-width: inherit;
+        .card-header {
+            padding: 13px 25px; 
+            padding-right: 63px !important;
 
-            &-wrapper {
-                max-width: 100%;
+            &:before {
+                right: 20px; 
             }
+
+            .title {
+                font-size: 17px;
+                line-height: 30px;
+            }
+        }
+
+        .content-editor {
+            margin-top: 0;
+            font-size: 15px;
+            line-height: 28px;
+            padding: 0px 21px 15px;
+
+            h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin: 0 0 20px;
+            }
+
+            .btn {
+                margin-bottom: 15px;
+            }
+
+
+            ul { 
+
+                li {
+                    padding-left: 10px; 
+
+                    ul {
+                        margin-top: 10px;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+            ol { 
+
+                li { 
+
+                    ol { 
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+
+                        li {
+                            padding-left: 30px;
+
+                            ol {
+
+                                li {
+                                    padding-left: 45px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ul, ol { 
+                margin-bottom: 25px;
+
+                li {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    .stay-connected__content {
+        min-height: calc(100vh - 290px);
+
+        .title {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-top: 25px;
+        }
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .footer {
+        padding: 26px 0;
+
+        &__widget-wrapper {
+            margin-bottom: 70px;
         }
     }
 
 }/* 991 */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
 
-    h1, .h1 { font-size: 45px; line-height: 42px; }
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+
+        &__content {
+            max-width: 510px;
+
+            .title, p {
+                margin: 0 0 15px;
+            }
+        }
+
+        &__media { 
+            max-width: 230px;
+        }
+    }
+
+    .noze-making {
+        padding: 50px 0;
+    }
+
+    .about-gallery {
+        padding: 60px 0;
+
+        &__content {  
+            margin: 0 auto 30px;
+
+            .title { 
+                margin-bottom: 10px;
+            }
+        }
+
+        &__slide {   
+
+            .title {
+                margin-bottom: 10px;
+            }
+
+            &-media { 
+
+                &-wrapper {
+                    height: 280px;
+                }
+            }
+        }
+    }
+
+    .about-covid {
+
+        &__content { 
+
+            .title {
+                margin-bottom: 15px;
+            }
+        }
+
+        &__media {
+            height: 340px;
+        }
+    }
+
+    .what-matters {
+
+        &__content .title {
+            margin-bottom: 12px;
+        }
+    }
+
+    .matters-section {
+
+        .matters__item {
+            min-height: calc(318px + 2px);
+            
+            &-wrapper {
+                height: 318px;
+            }
+
+            .title {
+                font-size: 20px;
+                line-height: 21px;
+            }
+
+            p {
+                padding: 0 10%;
+            }
+        }
+
+        .matters-nav li {
+            font-size: 16px !important;
+            line-height: 30px !important;
+        }
+    }
+
+    .hero-area {
+
+        .matters__content {
+
+            .title {
+                margin-bottom: 20px;
+            }
+        }
+
+        .your-noze { 
+
+            .power__item { 
+                margin-bottom: 60px !important;
+            }
+        }
+    }
+
+    .wondering {
+        padding: 80px 0;
+    }
+
+    .faq-section {
+        padding: 50px 0;
+
+        h2.title {
+            margin-bottom: 20px;
+        }
+    }
+
+    #faqs .card {
+        @include border-radius(22px);
+
+        .card-header {
+            padding: 10px 20px; 
+            padding-right: 50px !important;
+
+            &:before {
+                right: 15px; 
+            }
+
+            .title {
+                font-size: 15px;
+                line-height: 20px;
+            }
+        }
+
+        .content-editor {
+            margin-top: 0;
+            font-size: 14px;
+            line-height: 26px;
+            padding: 0px 20px 10px;
+        }
+    }
+
+    .stay-connected__content {
+        min-height: calc(100vh - 350px);
+
+        .btn {
+            margin-top: 20px;
+        }
+    }
  
-}/* 600 */
+}/* 767 */
 
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 575px) {
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header .navbar .navbar-collapse .navbar-nav:not(.navbar-right) {
+        padding: 0 20px 0 0;
+
+        li {
+            width: 90px; 
+            margin: 4px 0 4px !important;
+
+            > a {
+                font-size: 13px;
+                line-height: 17px; 
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+
+        &__content { 
+
+            .title, p {
+                margin: 0 0 10px;
+            }
+        }
+
+        &__media { 
+            max-width: 180px;
+        }
+    }
+
+    .noze-making {
+        padding: 40px 0;
+    }
+
+    .about-gallery {
+        padding: 40px 0;
+
+        &__content {  
+            margin: 0 auto 25px;
+        }
+
+        &__slide {   
+
+
+            &-media { 
+
+                &-wrapper {
+                    height: 250px;
+                }
+            }
+        }
+    }
+
+    .slick-dots { 
+        bottom: 245px; 
+    }
+
+    .about-covid {
+
+        &__content { 
+
+            .title {
+                margin-bottom: 10px;
+            }
+        }
+
+        &__media {
+            height: 310px;
+        }
+    }
+
+    .what-matters {
+
+        &__content {
+            margin-bottom: 20px;
+
+            .title {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .matters-section {
+
+        .matters__item {
+
+            .title {
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            p { 
+                font-size: 13px;
+                line-height: 14px;
+            }
+        }
+
+        .matters-nav li {
+            font-size: 13px !important;
+            line-height: 20px !important;
+        }
+    }
+
+    .hero-area {
+
+        .matters__content {
+
+            .title {
+                margin-bottom: 15px;
+            }
+        }
+
+        .your-noze { 
+
+            .power__item { 
+                margin-bottom: 40px !important;
+            }
+        }
+    }
+
+    .wondering {
+        padding: 60px 0;
+
+        &__media {
+            width: 315px;
+            height: 315px;
+        }
+    }
+
+    .faq-section {
+        padding: 40px 0;
+    }
+
+    .stay-connected__content {
+
+        .btn {
+            margin-top: 15px;
+        }
+    }
+ 
+}/* 575 */
+
+@media only screen and (max-width: 480px) {
 
     h1, .h1 { font-size: 35px; line-height: 42px; } 
     h2, .h2 { font-size: 30px;  line-height: 30px; }
@@ -394,5 +956,83 @@ MEDIA QUERIES
     .btn {
         font-size: 13px;
     }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+
+        &__media { 
+            max-width: 180px;
+        }
+    }
+
+    .about-gallery {
+        padding: 40px 0;
+
+        &__slide {   
+
+
+            &-media { 
+
+                &-wrapper {
+                    height: 200px;
+                }
+            }
+        }
+    }
+
+    .slick-dots { 
+        bottom: 245px; 
+    }
+
+    .about-covid {
+        padding: 50px 0;
+
+        &__media {
+            height: 280px;
+        }
+    }
+
+    .matters-section {
+
+        .matters__item {
+
+            .title { 
+                padding: 0 30px; 
+            }
+        }
+
+        .matters-nav li {
+            font-size: 11px !important;
+            line-height: 15px !important;
+        }
+    }
+
+    .hero-area {
+
+        .matters__content {
+
+            .title {
+                margin-bottom: 10px;
+            }
+        }
+
+        .your-noze { 
+
+            .power__item { 
+                margin-bottom: 30px !important;
+            }
+        }
+    }
+
+    .wondering {
+        padding: 40px 0;
+
+        &__media {
+            width: 260px;
+            height: 260px;
+        }
+    }
  
-}/* 413 */
+}/* 480 */

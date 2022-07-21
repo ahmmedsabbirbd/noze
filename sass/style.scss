@@ -340,9 +340,12 @@ HOME STYLES
 			}
 		}
 
+		.title {
+			margin-bottom: 20px;
+		}
+		
 		p {
 			display: none;
-			margin-top: 20px;
 
 			a {
 
@@ -363,6 +366,10 @@ HOME STYLES
 			video, img {
 				border: none;
 				height: 100%;
+			}
+
+			img {
+				@include border-radius(500px);
 			}
 
 			&-wrapper {
@@ -392,6 +399,33 @@ HOME STYLES
 			font-style: italic;
 			line-height: 24px;
 			letter-spacing: 0.1px;
+		}
+	}
+}
+
+.slick-dots {
+	margin: -4px;
+	bottom: 226px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&.matter-dots {
+		bottom: -10px;
+	}
+
+	li {
+		width: 7px;
+		height: 7px;
+		margin: 4px;
+		min-width: 7px;
+		background-color: rgba(91, 1, 174, 0.23); 
+		@include border-radius(500px);
+		@include transition(all .3s ease);
+
+		&.slick-active {
+			background-color: $primary;
 		}
 	}
 }
@@ -595,9 +629,13 @@ HOME STYLES
 			position: sticky;
 		}
 
+		.title {
+			margin-bottom: 45px;
+		}
+
 		p {
+			margin: auto;
 			max-width: 550px;
-			margin: 45px auto 0;
 		}
 	}
 

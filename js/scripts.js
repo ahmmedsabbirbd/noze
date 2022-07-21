@@ -152,7 +152,10 @@
         $aboutgallerynav = $('.about-gallery__slide-media-wrapper');
 
         $aboutgalleryslick.slick({ 
-            asNavFor: $aboutgallerynav
+            asNavFor: $aboutgallerynav,
+            arrows: false,
+            dots: true,
+            dotsClass: "slick-dots list-inline",
         });
 
         $aboutgalleryslick.on({
@@ -166,6 +169,7 @@
 
         $aboutgallerynav.slick({
             slidesToShow: 1, 
+            arrows: false,
             asNavFor: $aboutgalleryslick, 
         });
     }
@@ -232,7 +236,8 @@
         $matternav = $('.matters-nav');
 
         $matterslick.slick({ 
-            asNavFor: $matternav
+            asNavFor: $matternav,
+            arrows: false,
         });
 
         $matterslick.on({
@@ -245,8 +250,11 @@
         });
 
         $matternav.slick({
+            arrows: false,
+            dots: true,
             slidesToShow: 1, 
-            asNavFor: $matterslick, 
+            asNavFor: $matterslick,
+            dotsClass: "slick-dots list-inline matter-dots",
         });
     }
 

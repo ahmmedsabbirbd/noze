@@ -1,5 +1,12 @@
 (function ($) {
 
+    /*** Scroll Down-up */
+    $(window).scroll(function(){
+        if($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
+           $('.header .navbar-nav:not(.navbar-right)').removeClass('active');
+        }
+    });  
+
     /*** Sticky header */
     $(window).scroll(function(){
         if($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
@@ -13,6 +20,12 @@
 
     menuBtn.click(function() { 
         menuBtn.toggleClass('active'); 
+    });
+
+    $('body').on('click', function (e) {
+      if (!$(e.target).is(menuBtn)) {
+        $('.header .navbar-nav:not(.navbar-right)').removeClass('active');
+      }
     });
 
     /*** Scroll Nav */
@@ -60,6 +73,38 @@
 
     /*** tooltip */
     $('[data-toggle="tooltip"]').tooltip();
+
+    if ($(window).width() <= 991) {
+        
+        /*** matterslider */
+        var $matterslick,
+            matterisPause;
+
+        $matterslick = $('.matters__item-wrapper');
+        $matternav = $('.matters-nav');
+
+        $matterslick.slick({ 
+            asNavFor: $matternav,
+            arrows: false,
+        });
+
+        $matterslick.on({
+            mouseenter: function() {
+                matterisPause = true;
+            },
+            mouseleave: function() {
+                matterisPause = false;
+            }
+        });
+
+        $matternav.slick({
+            arrows: false,
+            dots: true,
+            slidesToShow: 1, 
+            asNavFor: $matterslick,
+            dotsClass: "slick-dots list-inline matter-dots",
+        });
+    }
 
     if ($(window).width() > 991) {
          /*** aboutgalleryAnimation.js */
@@ -225,38 +270,6 @@
             }
         }
     });
-
-    if ($(window).width() <= 991) {
-        
-        /*** matterslider */
-        var $matterslick,
-            matterisPause;
-
-        $matterslick = $('.matters__item-wrapper');
-        $matternav = $('.matters-nav');
-
-        $matterslick.slick({ 
-            asNavFor: $matternav,
-            arrows: false,
-        });
-
-        $matterslick.on({
-            mouseenter: function() {
-                matterisPause = true;
-            },
-            mouseleave: function() {
-                matterisPause = false;
-            }
-        });
-
-        $matternav.slick({
-            arrows: false,
-            dots: true,
-            slidesToShow: 1, 
-            asNavFor: $matterslick,
-            dotsClass: "slick-dots list-inline matter-dots",
-        });
-    }
 
     /*** BrowserDetect */
     var BrowserDetect = {

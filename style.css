@@ -836,7 +836,7 @@ HOME STYLES
 .about-covid__media video {
   width: 100%;
   border: none;
-  min-height: 100%;
+  height: inherit;
 }
 .about-covid .about-covid__item-wrapper {
   width: 100%;
@@ -1794,19 +1794,22 @@ MEDIA QUERIES
     padding: 80px 0;
   }
   .about-covid__content {
+    max-width: 100%;
     text-align: center;
   }
   .about-covid__content .title {
     text-align: center;
   }
   .about-covid__media {
-    height: 380px;
     padding-right: 0;
     margin-bottom: 20px;
   }
 
   .what-matters {
     padding: 0;
+  }
+  .what-matters__content {
+    height: auto;
   }
   .what-matters__content .title {
     margin-bottom: 15px;
@@ -1838,6 +1841,19 @@ MEDIA QUERIES
     font-weight: 600;
   }
 
+  .hero-area .heroVideo {
+    top: 0 !important;
+    position: inherit !important;
+  }
+  .hero-area .heroVideo-wrapper {
+    height: auto !important;
+  }
+  .hero-area .heroVideo video {
+    position: inherit !important;
+  }
+  .hero-area .matters__content {
+    height: auto;
+  }
   .hero-area .matters__content .title {
     margin-bottom: 25px;
   }
@@ -1954,8 +1970,11 @@ MEDIA QUERIES
     margin-bottom: 8px;
   }
 
+  .stay-connected {
+    padding: 40px 0;
+  }
   .stay-connected__content {
-    min-height: calc(100vh - 290px);
+    min-height: calc(100vh - 330px);
   }
   .stay-connected__content .title {
     margin-bottom: 10px;
@@ -2011,9 +2030,6 @@ MEDIA QUERIES
 
   .about-covid__content .title {
     margin-bottom: 15px;
-  }
-  .about-covid__media {
-    height: 340px;
   }
 
   .what-matters__content .title {
@@ -2082,7 +2098,7 @@ MEDIA QUERIES
   }
 
   .stay-connected__content {
-    min-height: calc(100vh - 350px);
+    min-height: calc(100vh - 390px);
   }
   .stay-connected__content .btn {
     margin-top: 20px;
@@ -2212,6 +2228,14 @@ MEDIA QUERIES
   /***********************************
   HOME STYLES
   ***********************************/
+  .header .navbar .navbar-collapse .navbar-nav.navbar-right li a {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  /***********************************
+  HOME STYLES
+  ***********************************/
   .banner__media {
     max-width: 180px;
   }
@@ -2229,9 +2253,6 @@ MEDIA QUERIES
 
   .about-covid {
     padding: 50px 0;
-  }
-  .about-covid__media {
-    height: 280px;
   }
 
   .matters-section .matters__item .title {

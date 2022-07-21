@@ -251,6 +251,7 @@ MEDIA QUERIES
                     &:not(.navbar-right) {
                         top: 19px;
                         right: 20px; 
+                        cursor: pointer;
                         max-height: 28px;
                         position: absolute;
                         overflow-y: hidden;
